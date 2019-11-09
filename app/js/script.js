@@ -69,7 +69,8 @@
 // clearInterval(intervalId);
 
 const allElements = document.querySelectorAll('*');
-const interval = 2000;
+const intervalAddColor = 2000;
+const intervalRemoveColor = 2000;
 
 function getRandomInt(min, max) {
     return Math.floor(Math.random() * (max - min + 1)) + min;
@@ -83,7 +84,18 @@ function randomColor() {
     return '#'.concat(r.toString(16), g.toString(16), b.toString(16));
 }
 
+function addColor(elements) {
+    elements[getRandomInt(0, allElements.length)].style.backgroundColor = randomColor();
+}
+
+function removeColor(elements) {
+    elements[getRandomInt(0, allElements.length)].removeAttribute('style');
+}
+
 setInterval(() => {
-    allElements[getRandomInt(0, allElements.length)].style.backgroundColor = randomColor();
-    allElements[getRandomInt(0, allElements.length)].removeAttribute('style');
-}, interval);
+    addColor(allElements);
+}, intervalAddColor);
+
+setInterval(() => {
+    removeColor(allElements);
+}, intervalRemoveColor);
