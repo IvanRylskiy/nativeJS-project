@@ -68,6 +68,11 @@
 // clearTimeout(timeoutId);
 // clearInterval(intervalId);
 
+// First Task
+// Реализовать подсветку случайного элемента при загрузке;
+// Каждые 2 секунды подсвечивать новый элемент случайным цветом;
+// Каждые 2 секунды снимать подсветку со случайного элемента.
+
 const allElements = document.querySelectorAll('*');
 const intervalAddColor = 2000;
 const intervalRemoveColor = 2000;
