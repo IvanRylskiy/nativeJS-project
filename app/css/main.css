@@ -231,6 +231,8 @@ svg:hover {
 .nav-item__link {
     text-decoration: none;
     color: #737270;
+    display: inline-block;
+    height: 35px;
 }
 .footer {
     height: 332px;
