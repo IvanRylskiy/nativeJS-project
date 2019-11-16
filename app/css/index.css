@@ -1,5 +1,5 @@
 /* Home page */
-.content {
+.home {
     margin-top: 30px;
     padding-left: 80px;
     padding-right: 80px;
@@ -7,23 +7,23 @@
     flex-wrap: wrap;
     flex-direction: column;
 }
-.content__top {
+.home__top {
     display: flex;
     flex-direction: row;
     justify-content: space-between;
 }
-.content__bot {
+.home__bot {
     display: flex;
     flex-direction: row;
     justify-content: space-between;
 }
-.content__left {
+.home__left {
     display: flex;
     flex-wrap: wrap;
     justify-content: space-between;
     width: 606px;
 }
-.content__right {
+.home__right {
     display: flex;
     flex-wrap: wrap;
     justify-content: space-between;
