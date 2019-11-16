@@ -138,6 +138,11 @@ svg:hover {
     display: flex;
     flex-direction: column;
 }
+.header__home {
+    width: 166px;
+    height: 54px;
+    margin: 25px 130px 21px 80px;
+}
 .header__block_top {
     display: flex;
     height: 100px;
@@ -145,7 +150,6 @@ svg:hover {
 .header__logo {
     width: 166px;
     height: 54px;
-    margin: 25px 130px 21px 80px;
 }
 .input-block {
     width: 400px;
