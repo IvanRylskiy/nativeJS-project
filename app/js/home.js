@@ -6,9 +6,9 @@ export function home(products) {
     let fakeChildCreate = document.createElement('div');
     fakeChildCreate.className = 'fake-child';
     if (document.body.children[0].children.length == 4) {
-        document.body.children[0].replaceChild(fakeChildCreate, document.body.children[0].children[2]);
+        document.body.children[0].replaceChild(fakeChildCreate, document.body.children[0].children[1]);
     }
-    if (window.location.href.indexOf('index.html') != -1) {
+    if (window.location.href.indexOf('#home') != -1) {
         let fakeChild = document.querySelector('.fake-child');
         let homeSectionCreate = document.createElement('section');
         homeSectionCreate.className = 'home';
