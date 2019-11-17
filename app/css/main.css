@@ -279,8 +279,10 @@ svg:hover {
 }
 .footer-bottom__line {
     width: 1279px;
-    height: 1px;
-    background: #c6c6c5;
+    /* height: 1px; */
+    height: 3px;
+    border-bottom: 1px solid #c6c6c5;
+    /* background: #c6c6c5; */
     margin: 0 auto;
     margin-bottom: 21px;
 }
@@ -298,7 +300,7 @@ svg:hover {
     margin-right: 20px;
 }
 .location {
-    padding-left: 85px;
+    /* padding-left: 85px; */
     padding-top: 25px;
     margin-bottom: 20px;
 }

@@ -3,13 +3,7 @@
 // При каждой загрузке страницы товары, попадающие в блок, должны выбираться произвольно
 
 export function home(products) {
-    let fakeChildCreate = document.createElement('div');
-    fakeChildCreate.className = 'fake-child';
-    if (document.body.children[0].children.length == 4) {
-        document.body.children[0].replaceChild(fakeChildCreate, document.body.children[0].children[1]);
-    }
-    if (window.location.href.indexOf('#home') != -1) {
-        let fakeChild = document.querySelector('.fake-child');
+    let fakeChild = document.children[0].children[1].children[0].children[1];
         let homeSectionCreate = document.createElement('section');
         homeSectionCreate.className = 'home';
         homeSectionCreate.innerHTML = `<div class="top home__top"></div>
@@ -93,8 +87,4 @@ export function home(products) {
             }
         }
         drawHome();
-    } else {
-        let homeSection = document.querySelector('.home');
-        document.body.children[0].replaceChild(fakeChildCreate, homeSection);
-    }
 }
