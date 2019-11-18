@@ -3,6 +3,7 @@ import { request } from './request.js';
 import { menu } from './menu.js';
 import { allLinks } from './menu.js';
 import { category } from './category.js';
+import { Cart } from './cart.js';
 
 window.onload = function() {
     if (location.hash == '') {
@@ -28,3 +29,7 @@ window.addEventListener('hashchange', drawPage);
 
 allLinks();
 menu();
+
+window.cartInstance = new Cart(0);
+
+cartInstance.addItem({price: 200});
