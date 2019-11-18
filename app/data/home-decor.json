@@ -4,7 +4,7 @@
         "quantity": "25478 items",
         "subcategories": 
         [
-            { "name": "Clothing", "link": "#clothing" },
+            { "name": "Clothing", "link": "#category_clothing" },
             { "name": "Pressure Cookers", "link": "#" },
             { "name": "Kitchen Tools", "link": "#" },
             { "name": "Gas Stoves", "link": "#" },

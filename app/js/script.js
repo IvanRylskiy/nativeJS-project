@@ -12,13 +12,15 @@ window.onload = function() {
 };
 
 function drawPage() {
-    if (location.hash == '#home') {
+    let locationHash = location.hash;
+    if (locationHash == '#home') {
         const urlHome = 'http://127.0.0.1:5500/JS/projectOne/app/data/home.json';
         request(urlHome, home);
     }
-    if (location.hash == '#clothing') {
-        let urlClothing = 'http://127.0.0.1:5500/JS/projectOne/app/data/home_decor__clothing.json'
-        request(urlClothing, category);
+    if (locationHash.indexOf('category') != -1) {
+        let categoryName = location.hash.split('_')[1];
+        let urlCategory = `http://127.0.0.1:5500/JS/projectOne/app/data/category_${categoryName}.json`;
+        request(urlCategory, category);
     }
 }
 
