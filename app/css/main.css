@@ -198,17 +198,32 @@ svg:hover {
     background-color: #8bc34a;
     padding: 3px 5px 4px 5px;
 }
-.personal-block__liked {
+.personal-block__liked-svg {
     margin-top: 42px;
     height: 26px;
-    width: 45px;
+    width: 28px;
     margin-right: 27px;
 }
 .personal-block__cart {
     margin-top: 40px;
     height: 27px;
-    width: 55px;
-    margin-right: 22px;
+    width: 32px;
+    /* margin-right: 22px; */
+    margin-right: 80px;
+}
+.personal-block__cart-svg {
+    width: 32px;
+    height: 27px;
+}
+.total-price {
+    position: absolute;
+    top: 30px;
+    border-radius: 5px;
+    background-color: #8bc34a;
+    border: 1px solid #8bc34a;
+    color: white;
+    font-size: 0.75rem;
+    padding: 0 3px;
 }
 .personal-block__profile {
     width: 40px;

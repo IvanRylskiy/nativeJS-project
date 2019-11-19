@@ -2,9 +2,14 @@ export class Cart {
     constructor(productPrice) {
         this.productPrice = productPrice;
     }
-    addItem(item) {
+    addTotalToCart(item) {
         this.productPrice += +item.productPrice;
-        console.log(this.productPrice);
+        // console.log(this.productPrice);
+        let totalPrice = document.querySelector('.total-price');
+        totalPrice.textContent = '$'.concat(this.productPrice);
+        if (totalPrice.textContent != '') {
+            totalPrice.style.display = 'inline-block';
+        }
     }
 }
 
@@ -25,8 +30,8 @@ export function addToCart() {
             productInfo.productProd = productProd;
             productInfo.productPrice = productPrice;
             cartItems.push(productInfo);
-            console.log(cartItems);
-            cartInstance.addItem(cartItems[cartItems.length - 1]);
+            // console.log(cartItems);
+            cartInstance.addTotalToCart(cartItems[cartItems.length - 1]);
         });
     });
 }
