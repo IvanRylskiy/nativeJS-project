@@ -3,8 +3,6 @@
 // Содержимое всплывающего меню формируется динамиечски в зависимости от выбранной категории
 
 import { request } from './request.js';
-import { home } from './home.js';
-const urlHome = 'http://127.0.0.1:5500/JS/projectOne/app/data/home.json';
 
 export function menu () {
     let navLiItems = document.querySelectorAll('.nav-list__item');
@@ -62,7 +60,6 @@ export function menu () {
                     }
                 }
                 menuAddMargin();
-                allLinks();
                 closeMenuOnLink();
             }
             
@@ -79,16 +76,6 @@ export function menu () {
                 let menu = document.querySelector('.menu');
                 elements.removeChild(menu);
             }
-        });
-    });
-}
-
-export function allLinks() {
-    let allLinks = document.querySelectorAll('a');
-    allLinks.forEach(elements => {
-        elements.addEventListener('click', (event) => {
-            // event.preventDefault();
-            request(urlHome, home);
         });
     });
 }

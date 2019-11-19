@@ -11,3 +11,13 @@ export class Cart {
 
 // cartInstance.addItem({price: 2000});
 // cartInstance.addItem({price: 200});
+
+export function addToCart() {
+    let btnAddToCart = document.querySelectorAll('.more-info');
+
+    btnAddToCart.forEach(element => {
+        element.addEventListener('click', () => {
+            console.log(element);
+        });
+    });
+}
