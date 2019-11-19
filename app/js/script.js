@@ -30,5 +30,3 @@ window.addEventListener('hashchange', drawPage);
 menu();
 
 window.cartInstance = new Cart(0);
-
-cartInstance.addItem({price: 200});
