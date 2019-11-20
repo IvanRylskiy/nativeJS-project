@@ -1,3 +1,5 @@
+const cartItems = [];
+
 export class Cart {
     constructor(productPrice) {
         this.productPrice = productPrice;
@@ -10,12 +12,14 @@ export class Cart {
         if (totalPrice.textContent != '') {
             totalPrice.style.display = 'inline-block';
         }
+        // console.log(item, 'odin item');
+        cartItems.push(item);
+        // console.log(cartItems, 'massiv itemov');
     }
 }
 
 export function addToCart() {
     let btnAddToCart = document.querySelectorAll('.more-info');
-    let cartItems = [];
 
     btnAddToCart.forEach(element => {
         element.addEventListener('click', () => {
@@ -29,9 +33,7 @@ export function addToCart() {
             productInfo.productSupp = productSupp;
             productInfo.productProd = productProd;
             productInfo.productPrice = productPrice;
-            cartItems.push(productInfo);
-            // console.log(cartItems);
-            cartInstance.addTotalToCart(cartItems[cartItems.length - 1]);
+            cartInstance.addTotalToCart(productInfo);
         });
     });
 }
