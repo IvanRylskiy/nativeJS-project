@@ -204,6 +204,10 @@ svg:hover {
     width: 28px;
     margin-right: 27px;
 }
+.personal-block__cart-link {
+    height: 27px;
+    width: 32px;
+}
 .personal-block__cart {
     margin-top: 40px;
     height: 27px;

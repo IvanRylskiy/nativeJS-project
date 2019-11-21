@@ -3,7 +3,7 @@ import { request } from './request.js';
 import { menu } from './menu.js';
 import { category } from './category.js';
 import { Cart } from './cart.js';
-import { addToCart } from './cart.js';
+import { cart } from './cart.js';
 
 window.onload = function() {
     if (location.hash == '') {
@@ -13,15 +13,17 @@ window.onload = function() {
 };
 
 function drawPage() {
-    let locationHash = location.hash;
-    if (locationHash == '#home') {
+    if (location.hash == '#home') {
         const urlHome = 'http://127.0.0.1:5500/JS/projectOne/app/data/home.json';
-        request(urlHome, home, addToCart);
+        request(urlHome, home);
     }
-    if (locationHash.indexOf('category') != -1) {
+    if (location.hash.indexOf('category') != -1) {
         let categoryName = location.hash.split('_')[1];
         let urlCategory = `http://127.0.0.1:5500/JS/projectOne/app/data/category_${categoryName}.json`;
-        request(urlCategory, category, addToCart);
+        request(urlCategory, category);
+    }
+    if (location.hash == '#cart') {
+        cart();
     }
 }
 

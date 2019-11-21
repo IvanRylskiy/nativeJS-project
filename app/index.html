@@ -7,6 +7,7 @@
     <title>home</title>
     <link rel="stylesheet" href="css/main.css">
     <link rel="stylesheet" href="css/index.css">
+    <link rel="stylesheet" href="css/cart.css">
     <link href="https://fonts.googleapis.com/css?family=Open+Sans&display=swap&subset=cyrillic" rel="stylesheet">
 </head>
 <body>
@@ -35,10 +36,12 @@
                         <use xlink:href="assets/img/icons.svg#liked"></use>
                     </svg>
                     <span class="personal-block__cart">
-                        <svg class="personal-block__cart-svg" viewbox="0 0 32 27">
-                            <use xlink:href="assets/img/icons.svg#cart"></use>
-                        </svg>
-                        <span class="total-price" style="display: none;"></span>
+                        <a href="#cart" class="personal-block__cart-link">
+                            <svg class="personal-block__cart-svg" viewbox="0 0 32 27">
+                                <use xlink:href="assets/img/icons.svg#cart"></use>
+                            </svg>
+                        </a>
+                        <span class="total-price">$0</span>
                     </span>
                 </div>
             </div>
@@ -177,6 +180,85 @@
             </div>
         </footer>
 
+        <template id='cart-item'>
+            <tr class="cart__tr">
+                <td class="cart__td">
+                    <article class="product">
+                        <svg class="icon icon__cross">
+                            <use xlink:href="assets/img/icons.svg#cross"></use>
+                        </svg>
+                        <div class="product__block-for-image">
+                            <img class="product__image" src="img/bitmap@3x.jpg" alt="">
+                        </div>
+                        <div class="product__details">
+                            <span class="product__name">Product Name Here</span>
+                            <span class="product__supplier">Supplier’s Name Here</span>
+                        </div>
+                    </article>
+                </td>
+                <td class="cart__td cart__td_end"><span>$28.99</span></td>
+                <td class="cart__td cart__td_end">
+                    <input placeholder="1" class="input-text input-quan" type="text">
+                </td>
+                <td class="cart__td cart__td_end cart__td_sum"><span class="product__sum">$28.99</span></td>
+                <td class="cart__td "></td>
+            </tr>
+        </template>
+
+        <template id="cart">
+            <section class="location">
+                <span class="location-item location__item"><a href="#home" class="location-item__link">Home</a></span>
+                <svg class="location__icon">
+                    <use xlink:href="assets/img/icons.svg#arrow-right"></use>
+                </svg>
+                <span class="location-item location__item"><a href="#cart" class="location-item__link">Cart</a></span>
+            </section>
+            <section class="cart__cart">
+                <table data-main-block class="cart__table">
+                    <thead class="cart__thead">
+                    <tr>
+                        <th width="53%" class="cart__th">ITEM DETAIL</th>
+                        <th class="cart__th">PRICE</th>
+                        <th class="cart__th">QTY</th>
+                        <th class="cart__th"></th>
+                        <th class="cart__th"></th>
+                    </tr>
+                    </thead>
+                    <tfoot class="cart__tfoot">
+                    <tr>
+                        <td class="cart__td">
+                            <div class="coupon-input">
+                                <input placeholder="Coupon code" class="input-text coupon-input__input-text"
+                                       type="text">
+                                <button class="button button-action_disabled">APPLY</button>
+                            </div>
+                        </td>
+                        <td colspan="2" class="cart__td cart__td_center">Subtotal</td>
+                        <td class="cart__td cart__td_end">$00.00</td>
+                    </tr>
+                    <tr>
+                        <td></td>
+                        <td colspan="2" class="cart__td cart__td_center">Shipping</td>
+                        <td class="cart__td cart__td_end">$5.00</td>
+                    </tr>
+                    <tr>
+                        <td class="cart__td"></td>
+                        <td colspan="4" class="cart__td cart__td_total-amount">
+                            <div class="total-amount">
+                                <span class="total-amount_title">Total Amount</span><span class="total-amount_amount">$5.00</span>
+                                <button class="button button-action button-action__checkout">PROCESS TO CHECKOUT</button>
+                            </div>
+                        </td>
+                    </tr>
+                    </tfoot>
+                    <tbody class="cart__tbody"></tbody>
+                </table>
+            </section>
+            <aside class="ad">
+                <img src="assets/img/cart/ad.jpg" alt="ad__image" class="ad__image">
+            </aside>
+        </template>
+
         <template id='category__card'>
             <div class="card cards__card">
                 <div class="card__top">
@@ -247,8 +329,12 @@
     </main>
 
     <!-- <script src="js/сhristmas_tree.js" type="text/javascript"></script> -->
+    <script src="js/addToCart.js" type="module"></script>
+    <script src="js/cart.js" type="module"></script>
+    <script src="js/category.js" type="module"></script>
     <script src="js/home.js" type="module"></script>
     <script src="js/menu.js" type="module"></script>
+    <script src="js/request.js" type="module"></script>
     <script src="js/script.js" type="module"></script>
 </body>
 </html>

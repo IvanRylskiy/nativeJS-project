@@ -1,3 +1,5 @@
+import { addToCart } from './addToCart.js';
+
 export function category(data) {
     function categoryPrep() {
         let fakeChild = document.children[0].children[1].children[0].children[1];
@@ -14,7 +16,7 @@ export function category(data) {
                                             <div class="cards category__cards"></div>`;
 
         document.body.children[0].replaceChild(categorySectionCreate, fakeChild);
-        }
+    }
     categoryPrep();
 
     function drawCategory() {
@@ -29,17 +31,22 @@ export function category(data) {
             categoryCardImg = categoryCardTemplate.content.querySelector('.card__img'),
             categoryCardSupp = categoryCardTemplate.content.querySelector('.desc__supp'),
             categoryCardProd = categoryCardTemplate.content.querySelector('.desc__prod'),
-            categoryCardPrice = categoryCardTemplate.content.querySelector('.desc__price');
+            categoryCardPrice = categoryCardTemplate.content.querySelector('.desc__price'),
+            categoryCardId = categoryCardTemplate.content.querySelector('.more-info');
         let cardsLength = data.cards.length;
         
         for (let i = 0; i < cardsLength; i++) {
             categoryCardImg.src = data.cards[i].src;
             categoryCardSupp.textContent = data.cards[i].suppliersName;
             categoryCardProd.textContent = data.cards[i].productName;
-            categoryCardPrice.textContent = data.cards[i].price;
+            categoryCardPrice.textContent = '$'.concat(data.cards[i].price);
+            categoryCardId.setAttribute('data-id', `${data.cards[i].id}`);
+            // console.log(data.cards[i], 'data of drawn element');
 
             let clone = document.importNode(categoryCardTemplate.content, true);
             categoryCards.appendChild(clone);
+            let kek = document.querySelectorAll('.cards__card');
+            // console.log(kek[i], 'drawn element');
         }
         if (categoryCards.innerHTML.indexOf('card') != -1) {
             let blockMore = document.createElement('div');
@@ -49,4 +56,6 @@ export function category(data) {
         }
     }
     drawCategory();
+
+    addToCart(data);
 }

@@ -1,0 +1,161 @@
+.ad__image {
+    width: 303px;
+    height: 303px;
+    /* float: right; */
+    /* margin-right: 79px; */
+}
+
+.ad {
+    float: right;
+    display: inline-block;
+}
+
+.cart {
+    /* float: left; */
+    margin-bottom: 50px;
+    padding-left: 80px;
+    padding-right: 80px;
+}
+
+.cart__cart {
+    display: inline-block;
+}
+
+.ad__image:hover {
+    cursor: pointer;
+}
+
+table {
+    border-collapse: collapse;
+}
+
+.cart__cart::after {
+    display: block;
+    content: "";
+    clear: both;
+}
+
+.cart__table {
+    width: 877px;
+}
+
+.cart__th {
+    height: 40px;
+    font-size: 16px;
+    color: #1c1c1b;
+    border-bottom: 1px solid #c8c8c8;
+}
+
+.cart__th:last-child {
+    padding-right: 5px;
+}
+
+.cart__td {
+    padding: 20px 0;
+}
+
+.icon__cross {
+    width: 15px;
+    height: 15px;
+    margin-right: 18px;
+}
+
+.cart__td_center {
+    text-align: center;
+}
+
+.cart__td_end {
+    text-align: end;
+}
+
+.cart__tr:last-child {
+    border-bottom: 1px solid #c8c8c8;
+}
+
+.product {
+    display: flex;
+    align-items: center;
+    justify-content: start;
+}
+
+.product__block-for-image {
+    width: 136px;
+    height: 100px;
+    border: 1px solid #c6c6c5;
+    border-radius: 3px;
+}
+
+.product__image {
+    margin-left: 24px;
+    margin-top: 5px;
+    width: 90px;
+    height: 90px;
+}
+
+.product__details {
+    margin-left: 20px;
+}
+
+.product__name {
+    display: block;
+    color: #1c1c1b;
+    font-size: 16px;
+}
+
+.product__sum {
+    color: #1c1c1b;
+}
+
+.product__supplier {
+    font-size: 0.875rem;
+}
+
+.coupon-input__input-text {
+    width: 228px;
+    display: inline-block;
+    font-size: 1.125rem;
+    margin-right: 10px;
+
+}
+
+.cart__td {
+    padding-right: 30px;
+}
+
+.cart__tfoot {
+    font-size: 20px;
+    color: #1c1c1b;
+}
+
+.btn_process-to-checkout {
+    width: 83%;
+}
+
+.cart__td_big {
+    font-weight: bold;
+    font-size: 30px;
+}
+
+.total-amount {
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    flex-wrap: wrap;
+    float: right;
+    height: 160px;
+    width: 367px;
+    box-shadow: 0.3px 5px 10px 0 rgba(9, 9, 9, 0.2), 1.4px 20px 221px 0 rgba(255, 255, 255, 0.5);
+}
+
+.total-amount_amount {
+    font-size: 30px;
+    font-weight: bold;
+}
+
+.cart__td_total-amount {
+    padding-right: 45px;
+}
+
+.button-action__checkout {
+    width: 83%;
+}
