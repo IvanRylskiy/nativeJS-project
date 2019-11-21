@@ -82,10 +82,13 @@ export function cart() {
                 let clone = document.importNode(cartItemTemplate.content, true);
                 cartBody.appendChild(clone);
             }
-        } else {
-            cartBody.textContent = 'Корзина пуста';
         }
 
+        cartSubTotal();
+    }
+    cartDraw();
+
+    function cartSubTotal() {
         let sumItems = document.querySelectorAll('.cart__td_sum');
         let subtotal = document.querySelector('.cart__subtotal');
         let shipping = document.querySelector('.cart__shipping');
@@ -97,5 +100,35 @@ export function cart() {
         subtotal.textContent = '$'.concat(subtotalRender);
         total.textContent = '$'.concat(+(shipping.textContent.split('$')[1]) + +(subtotal.textContent.split('$')[1]));
     }
-    cartDraw();
+
+    function cartActions() {
+        let deleteItemBtn = document.querySelectorAll('.icon__cross'),
+            quantityInput = document.querySelectorAll('.cart__quan');
+
+        deleteItemBtn.forEach(btn => {
+            btn.addEventListener('click', () => {
+                btn.parentNode.parentNode.parentNode.remove();
+
+                let localStorageItemsRender = JSON.parse(localStorage.getItem('items'));
+                for(let i = 0; i < localStorageItemsRender.length; i++) {
+                    if (localStorageItemsRender[i].id == btn.dataset.id) {
+                        localStorageItemsRender.splice(i, 1);
+                        localStorage.setItem('items', JSON.stringify(localStorageItemsRender));
+                    }
+                }
+                let localStorageItems = JSON.parse(localStorage.getItem('items'));
+
+                let sum = 0;
+                for (let i = 0; i < localStorageItems.length; i++) {
+                    sum = sum + (+(localStorageItems[i].price) * +(localStorageItems[i].quantity));
+                }
+                let totalPrice = document.querySelector('.total-price');
+                totalPrice.textContent = '$'.concat(sum);
+                localStorage.setItem('sum', sum);
+
+                cartSubTotal();
+                });
+        });
+    }
+    cartActions();
 }
