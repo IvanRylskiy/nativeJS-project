@@ -10,6 +10,12 @@ window.onload = function() {
         location.hash = '#home';
     }
     drawPage();
+    
+    let sumLocalStorage = localStorage.getItem('sum');
+    if (sumLocalStorage != null) {
+        let totalPrice = document.querySelector('.total-price');
+        totalPrice.textContent = '$'.concat(sumLocalStorage);
+    }
 };
 
 function drawPage() {

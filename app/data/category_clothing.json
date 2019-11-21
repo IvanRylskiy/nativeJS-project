@@ -111,35 +111,36 @@
             "src": "assets/img/home_decor/__clothing/16.jpg", 
             "suppliersName": "Supplier’s Name Here", 
             "productName": "Product Name Here", 
-            "price": "$29,354.75"
+            "price": "$29,354.75",
+            "id": "33"
         },
         {
             "src": "assets/img/home_decor/__clothing/17.jpg", 
             "suppliersName": "Supplier’s Name Here", 
             "productName": "Product Name Here", 
             "price": "25",
-            "id": "33"
+            "id": "34"
         },
         {
             "src": "assets/img/home_decor/__clothing/18.jpg", 
             "suppliersName": "Supplier’s Name Here", 
             "productName": "Product Name Here", 
             "price": "25",
-            "id": "34"
+            "id": "35"
         },
         {
             "src": "assets/img/home_decor/__clothing/19.jpg", 
             "suppliersName": "Supplier’s Name Here", 
             "productName": "Product Name Here", 
             "price": "25",
-            "id": "35"
+            "id": "36"
         },
         {
             "src": "assets/img/home_decor/__clothing/20.jpg", 
             "suppliersName": "Supplier’s Name Here", 
             "productName": "Product Name Here", 
             "price": "25",
-            "id": "36"
+            "id": "37"
         }
     ]
 }
