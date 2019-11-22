@@ -4,6 +4,7 @@ import { menu } from './menu.js';
 import { category } from './category.js';
 import { Cart } from './cart.js';
 import { cart } from './cart.js';
+import { cartSum } from './cart.js';
 
 window.onload = function() {
     if (location.hash == '') {
@@ -11,11 +12,7 @@ window.onload = function() {
     }
     drawPage();
     
-    let sumLocalStorage = localStorage.getItem('sum');
-    if (sumLocalStorage != null) {
-        let totalPrice = document.querySelector('.total-price');
-        totalPrice.textContent = '$'.concat(sumLocalStorage);
-    }
+    cartSum();
 };
 
 function drawPage() {

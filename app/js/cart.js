@@ -3,18 +3,6 @@ export class Cart {
         this.productPrice = productPrice;
     }
     addTotalToCart(item) {
-        let sumLocalStorage = localStorage.getItem('sum');
-        var sum;
-        if (sumLocalStorage != null) {
-            sum = sumLocalStorage;
-        } else {
-            sum = 0;
-        }
-        sum = +(item.price) + +(sum);
-        localStorage.setItem('sum', sum);
-        let totalPrice = document.querySelector('.total-price');
-        totalPrice.textContent = '$'.concat(sum);
-
         let cartItems = [];
         if (localStorage.getItem('items') != null) {
             cartItems = JSON.parse(localStorage.getItem('items'));
@@ -40,6 +28,25 @@ export class Cart {
         }
 
         localStorage.setItem('items', JSON.stringify(cartItems));
+
+        cartSum();
+    }
+}
+
+export function cartSum() {
+    let localStorageItems = JSON.parse(localStorage.getItem('items'));
+    let sum = 0;
+    if (localStorageItems != null) {
+        for (let i = 0; i < localStorageItems.length; i++) {
+            sum = sum + (+(localStorageItems[i].price) * +(localStorageItems[i].quantity));
+            let totalPrice = document.querySelector('.total-price');
+            totalPrice.textContent = '$'.concat(sum);
+            localStorage.setItem('sum', sum);
+        }
+    } else if (localStorageItems != null) {
+        let totalPrice = document.querySelector('.total-price');
+        totalPrice.textContent = '$'.concat(sum);
+        localStorage.setItem('sum', sum);
     }
 }
 
@@ -54,7 +61,6 @@ export function cart() {
         cartSectionCreate.appendChild(clone);
     }
     cartPrep();
-    console.log(JSON.parse(localStorage.getItem('items')));
 
     function cartDraw() {
         let cartItemTemplate = document.querySelector('#cart-item'),
@@ -77,6 +83,7 @@ export function cart() {
                 suppCartItem.textContent = localStorageItems[i].suppliersName;
                 priceCartItem.textContent = '$'.concat(localStorageItems[i].price);
                 quanCartItem.value = localStorageItems[i].quantity;
+                quanCartItem.setAttribute('data-id', localStorageItems[i].id);
                 priceSumCartItem.textContent = '$'.concat(+(priceCartItem.textContent.split('$')[1]) * +(quanCartItem.value));
 
                 let clone = document.importNode(cartItemTemplate.content, true);
@@ -107,27 +114,53 @@ export function cart() {
 
         deleteItemBtn.forEach(btn => {
             btn.addEventListener('click', () => {
-                btn.parentNode.parentNode.parentNode.remove();
+                function cartDelItem() {
+                    btn.parentNode.parentNode.parentNode.remove();
+
+                    let localStorageItemsRender = JSON.parse(localStorage.getItem('items'));
+                    for(let i = 0; i < localStorageItemsRender.length; i++) {
+                        if (localStorageItemsRender[i].id == btn.dataset.id) {
+                            localStorageItemsRender.splice(i, 1);
+                            localStorage.setItem('items', JSON.stringify(localStorageItemsRender));
+                            console.log(JSON.parse(localStorage.getItem('items')));
+                        }
+                    }
+                }
+                cartDelItem();
+                
+                cartSubTotal();
+
+                cartSum();
+
+                if (location.hash == '#cart') {
+                    let sum = 0;
+                    let totalPrice = document.querySelector('.total-price');
+                    sum = document.querySelector('.cart__subtotal').textContent.split('$')[1];
+                    totalPrice.textContent = '$'.concat(sum);
+                    localStorage.setItem('sum', sum);
+                }
+                });
+        });
+
+        quantityInput.forEach(inp => {
+            inp.addEventListener('change', () => {
+                let itemPrice = inp.parentNode.previousSibling.previousSibling;
+                let itemSum = inp.parentNode.nextSibling.nextSibling;
+                itemSum.textContent = '$'.concat(+(inp.value) * +(itemPrice.textContent.split('$')[1]));
 
                 let localStorageItemsRender = JSON.parse(localStorage.getItem('items'));
                 for(let i = 0; i < localStorageItemsRender.length; i++) {
-                    if (localStorageItemsRender[i].id == btn.dataset.id) {
-                        localStorageItemsRender.splice(i, 1);
+                    if (localStorageItemsRender[i].id == inp.dataset.id) {
+                        localStorageItemsRender[i].quantity = inp.value;
                         localStorage.setItem('items', JSON.stringify(localStorageItemsRender));
+                        console.log(JSON.parse(localStorage.getItem('items')));
                     }
                 }
-                let localStorageItems = JSON.parse(localStorage.getItem('items'));
-
-                let sum = 0;
-                for (let i = 0; i < localStorageItems.length; i++) {
-                    sum = sum + (+(localStorageItems[i].price) * +(localStorageItems[i].quantity));
-                }
-                let totalPrice = document.querySelector('.total-price');
-                totalPrice.textContent = '$'.concat(sum);
-                localStorage.setItem('sum', sum);
 
                 cartSubTotal();
-                });
+
+                cartSum();
+            });
         });
     }
     cartActions();
