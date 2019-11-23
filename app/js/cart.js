@@ -50,7 +50,7 @@ export function cartSum() {
     }
 }
 
-export function cart() {
+export function cartRender() {
     function cartPrep() {
         let fakeChild = document.children[0].children[1].children[0].children[1];
         let cartSectionCreate = document.createElement('section');
@@ -110,7 +110,8 @@ export function cart() {
 
     function cartActions() {
         let deleteItemBtn = document.querySelectorAll('.icon__cross'),
-            quantityInput = document.querySelectorAll('.cart__quan');
+            quantityInput = document.querySelectorAll('.cart__quan'),
+            checkoutBtn = document.querySelector('.button-action__checkout');
 
         deleteItemBtn.forEach(btn => {
             btn.addEventListener('click', () => {
@@ -161,6 +162,10 @@ export function cart() {
 
                 cartSum();
             });
+        });
+
+        checkoutBtn.addEventListener('click', () => {
+            location.hash = '#checkout_shipping';
         });
     }
     cartActions();

@@ -1,10 +1,11 @@
-import { home } from './home.js';
-import { request } from './request.js';
-import { menu } from './menu.js';
-import { category } from './category.js';
+import { homeRender } from './home.js';
+import { makeRequest } from './request.js';
+import { menuRender } from './menu.js';
+import { categoryRender } from './category.js';
 import { Cart } from './cart.js';
-import { cart } from './cart.js';
+import { cartRender } from './cart.js';
 import { cartSum } from './cart.js';
+import { checkoutShippingRender } from './checkout.js';
 
 window.onload = function() {
     if (location.hash == '') {
@@ -16,22 +17,34 @@ window.onload = function() {
 };
 
 function drawPage() {
+    let getMethod = 'GET';
     if (location.hash == '#home') {
         const urlHome = 'http://127.0.0.1:5500/JS/projectOne/app/data/home.json';
-        request(urlHome, home);
+        makeRequest(urlHome, getMethod)
+        .then(homeRender)
+        .catch(function(error) {
+            console.log('Something went wrong', error);
+        });
     }
     if (location.hash.indexOf('category') != -1) {
         let categoryName = location.hash.split('_')[1];
         let urlCategory = `http://127.0.0.1:5500/JS/projectOne/app/data/category_${categoryName}.json`;
-        request(urlCategory, category);
+        makeRequest(urlCategory, getMethod)
+        .then(categoryRender)
+        .catch(function(error) {
+            console.log('Something went wrong', error);
+        });
     }
     if (location.hash == '#cart') {
-        cart();
+        cartRender();
+    }
+    if (location.hash == '#checkout_shipping') {
+        checkoutShippingRender();
     }
 }
 
 window.addEventListener('hashchange', drawPage);
 
-menu();
+menuRender();
 
 window.cartInstance = new Cart(0);

@@ -4,10 +4,11 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <title>home</title>
+    <title>Shop</title>
     <link rel="stylesheet" href="css/main.css">
     <link rel="stylesheet" href="css/index.css">
     <link rel="stylesheet" href="css/cart.css">
+    <link rel="stylesheet" href="css/checkout_shipping.css">
     <link href="https://fonts.googleapis.com/css?family=Open+Sans&display=swap&subset=cyrillic" rel="stylesheet">
 </head>
 <body>
@@ -179,6 +180,107 @@
                 </address>
             </div>
         </footer>
+
+        <template id="checkout-shipping">
+            <section class="location" style="padding-left: 80px;">
+                <span class="location-item location__item"><a href="#home" class="location-item__link">Home</a></span>
+                <svg class="location__icon">
+                    <use xlink:href="assets/img/icons.svg#arrow-right"></use>
+                </svg>
+                <span class="location-item location__item"><a href="#cart" class="location-item__link">Cart</a></span>
+                <svg class="location__icon">
+                    <use xlink:href="assets/img/icons.svg#arrow-right"></use>
+                </svg>
+                <span class="location-item location__item"><a href="#checkout-shipping_shipping" class="location-item__link">Checkout</a></span>
+            </section>
+
+            <ul class="checkout-shipping__navigation">
+                <li class="checkout-shipping__navigation-item checkout-shipping__navigation-item_active">
+                    <a href="#checkout_shipping" class="checkout-shipping__navigation-link checkout-shipping__navigation-link-active">Shipping Address</a>
+                </li>
+                <li class="checkout-shipping__navigation-item">
+                    <a href="#checkout_payment" class="checkout-shipping__navigation-link">Payment</a>
+                </li>
+            </ul>
+            
+            <form class="shipping">
+                <div class="col-3">
+                    <label class="payment-inf_label" for="first-name">First Name*</label>
+                    <input class="input-text payment-inf_field" id="first-name" type="text" placeholder="Jhone">
+                    <div class="wrapper-inf__inp">
+                        <label class="payment-inf_label" for="first-name">Country*</label>
+                        <select name="example" size="1">
+                            <option value="UK">UK</option>
+                            <option value="US">US</option>
+                            <option value="RU">RU</option>
+                            <option value="AZ">AZ</option>
+                            <option value="CH">CH</option>
+                        </select>
+                    </div>
+                </div>
+
+                <div class="col-3">
+                    <label class="payment-inf_label" for="last-name">Last Name*</label>
+                    <input class="input-text payment-inf_field" id="last-name" type="text" placeholder="Smith">
+                    <div class="wrapper-inf__inp">
+                        <label class="payment-inf_label" for="city">Town / City*</label>
+                        <input class="input-text payment-inf_field" id="city" type="text" placeholder="eg. New york">
+                    </div>
+                </div>
+
+                <div class="col-3">
+                    <label class="payment-inf_label" for="company-name">Company Name</label>
+                    <input class="input-text payment-inf_field" id="company-name" type="text" placeholder="Rosuson Industries">
+                    <div class="wrapper-inf__inp">
+                        <label class="payment-inf_label" for="postcode">Postcode*</label>
+                        <input class="input-text payment-inf_field" id="postcode" type="text" placeholder="eg. 358745">
+                    </div>
+                </div>
+
+                <div class="wrapper-inf__inp col-12">
+                    <label class="payment-inf_label" for="address">Address*</label>
+                    <span class="error">* Required</span>
+                    <input class="input-text payment-inf_field" id="address" type="text" placeholder="eg. 2nd steer, Costrica, Uk 354548">
+                </div>
+                    
+                <div class="wrapper-inf__inp col-3">
+                    <label class="payment-inf_label" for="email-address">Email Address*</label>
+                    <input class="input-text payment-inf_field" id="email-address" type="text" placeholder="abc@xyz.com">
+                </div>
+                    
+                <div class="wrapper-inf__inp col-3">
+                    <label class="payment-inf_label" for="phone">Phone</label>
+                    <input class="input-text payment-inf_field" id="phone" type="text" placeholder="eg. 94 788 1221">
+                </div>
+                
+                <div class="wrapper-inf__inp col-3 checkboxes">
+                    <div class="wrapper-inf__inp shipping_checkbox_first">
+                        <input id="one-checkbox" type="checkbox" class="input-checkbox">
+                        <label for="one-checkbox" class="label-checkbox">
+                            <svg class="icon icon_check">
+                                <use xlink:href="assets/img/icons.svg#check-mark"></use>
+                            </svg>
+                            Create an Account?
+                        </label>
+                    </div>
+                        
+                    <!-- <div class="wrapper-inf__inp">
+                        <input id="two-checkbox" type="checkbox" class="input-checkbox" checked>
+                        <label for="two-checkbox" class="label-checkbox">
+                            <svg class="icon icon_check">
+                                <use xlink:href="assets/img/icons.svg#check-mark"></use>
+                            </svg>
+                            Create an Account?
+                        </label>
+                    </div> -->
+                </div>
+            
+                <div class="block-buttons">
+                    <button class="button button-cancel button-to-cart">Back</button>
+                    <button class="button button-action button-to-payment">Next</button>
+                </div>
+            </form>
+        </template>
 
         <template id='cart-item'>
             <tr class="cart__tr">

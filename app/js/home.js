@@ -4,7 +4,7 @@
 
 import { addToCart } from './addToCart.js';
 
-export function home(data) {
+export function homeRender(data) {
     let fakeChild = document.children[0].children[1].children[0].children[1];
     let renderData;
     renderData = data;

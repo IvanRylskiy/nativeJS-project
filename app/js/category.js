@@ -1,6 +1,6 @@
 import { addToCart } from './addToCart.js';
 
-export function category(data) {
+export function categoryRender(data) {
     function categoryPrep() {
         let fakeChild = document.children[0].children[1].children[0].children[1];
         let categorySectionCreate = document.createElement('section');

@@ -2,9 +2,9 @@
 // При наведении мыши на категорию меню всплывает
 // Содержимое всплывающего меню формируется динамиечски в зависимости от выбранной категории
 
-import { request } from './request.js';
+import { makeRequest } from './request.js';
 
-export function menu () {
+export function menuRender () {
     let navLiItems = document.querySelectorAll('.nav-list__item');
 
     navLiItems.forEach(elements => {
@@ -65,7 +65,12 @@ export function menu () {
             
             let currentCategory = elements.dataset.category;
             let currentCategoryUrl = `http://127.0.0.1:5500/JS/projectOne/app/data/${currentCategory}.json`;
-            request(currentCategoryUrl, drawMenu);
+            let getMethod = 'GET';
+            makeRequest(currentCategoryUrl, getMethod)
+                .then(drawMenu)
+                .catch(function(error) {
+                    console.log('Something went wrong', error);
+                });
             }
         });
     });
