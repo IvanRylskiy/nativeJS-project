@@ -1,6 +1,7 @@
 {
     "category": "All categories",
     "subcategory": "Furniture",
+    "url": "#category_furniture",
     "cards": [
         {
             "src": "assets/img/home_decor/__clothing/1.jpg", 

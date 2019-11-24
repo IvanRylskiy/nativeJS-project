@@ -1,6 +1,7 @@
 {
     "category": "All categories",
     "subcategory": "Coffee Mugs",
+    "url": "#category_coffee-mugs",
     "cards": [
         {
             "src": "assets/img/home_decor/__clothing/1.jpg", 

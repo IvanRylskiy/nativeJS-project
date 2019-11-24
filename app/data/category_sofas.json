@@ -1,6 +1,7 @@
 {
     "category": "All categories",
     "subcategory": "Sofas",
+    "url": "#category_sofas",
     "cards": [
         {
             "src": "assets/img/home_decor/__clothing/1.jpg", 

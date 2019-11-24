@@ -1,6 +1,7 @@
 {
     "category": "Home Decor",
     "subcategory": "Clothing",
+    "url": "#category_clothing",
     "cards": [
         {
             "src": "assets/img/home_decor/__clothing/1.jpg", 

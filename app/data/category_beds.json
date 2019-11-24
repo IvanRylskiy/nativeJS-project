@@ -1,6 +1,7 @@
 {
     "category": "All categories",
     "subcategory": "Beds",
+    "url": "#category_beds",
     "cards": [
         {
             "src": "assets/img/home_decor/__clothing/1.jpg", 

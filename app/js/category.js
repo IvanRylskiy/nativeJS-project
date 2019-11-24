@@ -10,7 +10,7 @@ export function categoryRender(data) {
                                                 <svg class="location__icon">
                                                     <use xlink:href="assets/img/icons.svg#arrow-right"></use>
                                                 </svg>
-                                                <span class="location-item location__item"><a href="#category_${data.subcategory.toLowerCase()}" class="location-item__link"></a></span>
+                                                <span class="location-item location__item"><a href="${data.url}" class="location-item__link"></a></span>
                                             </section>
                                             <h2 class="category__heading"></h2>
                                             <div class="cards category__cards"></div>`;

@@ -1,6 +1,7 @@
 {
     "category": "All categories",
     "subcategory": "Kitchen Tools",
+    "url": "#category_kitchen-tools",
     "cards": [
         {
             "src": "assets/img/home_decor/__clothing/1.jpg", 
