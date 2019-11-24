@@ -1,0 +1,146 @@
+{
+    "category": "All categories",
+    "subcategory": "Bean Bags",
+    "cards": [
+        {
+            "src": "assets/img/home_decor/__clothing/1.jpg", 
+            "suppliersName": "Supplier’s Name Here", 
+            "productName": "Product Name Here", 
+            "price": "25",
+            "id": "18"
+        },
+        {
+            "src": "assets/img/home_decor/__clothing/2.jpg", 
+            "suppliersName": "Supplier’s Name Here", 
+            "productName": "Product Name Here", 
+            "price": "25",
+            "id": "19"
+        },
+        {
+            "src": "assets/img/home_decor/__clothing/3.jpg", 
+            "suppliersName": "Supplier’s Name Here", 
+            "productName": "Product Name Here", 
+            "price": "25",
+            "id": "20"
+        },
+        {
+            "src": "assets/img/home_decor/__clothing/4.jpg", 
+            "suppliersName": "Supplier’s Name Here", 
+            "productName": "Product Name Here", 
+            "price": "25",
+            "id": "21"
+        },
+        {
+            "src": "assets/img/home_decor/__clothing/5.jpg", 
+            "suppliersName": "Supplier’s Name Here", 
+            "productName": "Product Name Here", 
+            "price": "25",
+            "id": "22"
+        },
+        {
+            "src": "assets/img/home_decor/__clothing/6.jpg", 
+            "suppliersName": "Supplier’s Name Here", 
+            "productName": "Product Name Here", 
+            "price": "25",
+            "id": "23"
+        },
+        {
+            "src": "assets/img/home_decor/__clothing/7.jpg", 
+            "suppliersName": "Supplier’s Name Here", 
+            "productName": "Product Name Here", 
+            "price": "25",
+            "id": "24"
+        },
+        {
+            "src": "assets/img/home_decor/__clothing/8.jpg", 
+            "suppliersName": "Supplier’s Name Here", 
+            "productName": "Product Name Here", 
+            "price": "25",
+            "id": "25"
+        },
+        {
+            "src": "assets/img/home_decor/__clothing/9.jpg", 
+            "suppliersName": "Supplier’s Name Here", 
+            "productName": "Product Name Here", 
+            "price": "25",
+            "id": "26"
+        },
+        {
+            "src": "assets/img/home_decor/__clothing/10.jpg", 
+            "suppliersName": "Supplier’s Name Here", 
+            "productName": "Product Name Here", 
+            "price": "25",
+            "id": "27"
+        },
+        {
+            "src": "assets/img/home_decor/__clothing/11.jpg", 
+            "suppliersName": "Supplier’s Name Here", 
+            "productName": "Product Name Here", 
+            "price": "25",
+            "id": "28"
+        },
+        {
+            "src": "assets/img/home_decor/__clothing/12.jpg", 
+            "suppliersName": "Supplier’s Name Here", 
+            "productName": "Product Name Here", 
+            "price": "25",
+            "id": "29"
+        },
+        {
+            "src": "assets/img/home_decor/__clothing/13.jpg", 
+            "suppliersName": "Supplier’s Name Here", 
+            "productName": "Product Name Here", 
+            "price": "25",
+            "id": "30"
+        },
+        {
+            "src": "assets/img/home_decor/__clothing/14.jpg", 
+            "suppliersName": "Supplier’s Name Here", 
+            "productName": "Product Name Here", 
+            "price": "25",
+            "id": "31"
+        },
+        {
+            "src": "assets/img/home_decor/__clothing/15.jpg", 
+            "suppliersName": "Supplier’s Name Here", 
+            "productName": "Product Name Here", 
+            "price": "25",
+            "id": "32"
+        },
+        {
+            "src": "assets/img/home_decor/__clothing/16.jpg", 
+            "suppliersName": "Supplier’s Name Here", 
+            "productName": "Product Name Here", 
+            "price": "$29,354.75",
+            "id": "33"
+        },
+        {
+            "src": "assets/img/home_decor/__clothing/17.jpg", 
+            "suppliersName": "Supplier’s Name Here", 
+            "productName": "Product Name Here", 
+            "price": "25",
+            "id": "34"
+        },
+        {
+            "src": "assets/img/home_decor/__clothing/18.jpg", 
+            "suppliersName": "Supplier’s Name Here", 
+            "productName": "Product Name Here", 
+            "price": "25",
+            "id": "35"
+        },
+        {
+            "src": "assets/img/home_decor/__clothing/19.jpg", 
+            "suppliersName": "Supplier’s Name Here", 
+            "productName": "Product Name Here", 
+            "price": "25",
+            "id": "36"
+        },
+        {
+            "src": "assets/img/home_decor/__clothing/20.jpg", 
+            "suppliersName": "Supplier’s Name Here", 
+            "productName": "Product Name Here", 
+            "price": "25",
+            "id": "37"
+        }
+    ]
+}

@@ -15,7 +15,7 @@ export function checkoutShippingRender() {
             cityTemplate = categoryCheckoutTemplate.content.querySelector('#city'),
             companyNameTemplate = categoryCheckoutTemplate.content.querySelector('#company-name'),
             postcodeTemplate = categoryCheckoutTemplate.content.querySelector('#postcode'),
-            countryTemplate = categoryCheckoutTemplate.content.querySelector('select'),
+            // countryTemplate = categoryCheckoutTemplate.content.querySelector('select'),
             addressTemplate = categoryCheckoutTemplate.content.querySelector('#address'),
             emailAddressTemplate = categoryCheckoutTemplate.content.querySelector('#email-address'),
             phoneTemplate = categoryCheckoutTemplate.content.querySelector('#phone'),
@@ -48,9 +48,9 @@ export function checkoutShippingRender() {
         if (userData.createAnAccount != undefined) {
             createAnAccountTemplate.checked = userData.createAnAccount;
         }
-        if (userData.countrySelected != undefined) {
-            countryTemplate.value = countryTemplate.options[userData.countrySelected];
-        }
+        // if (userData.countrySelected != undefined) {
+        //     countryTemplate.value = countryTemplate.options[userData.countrySelected];
+        // }
         let clone = document.importNode(categoryCheckoutTemplate.content, true);
         categoryCheckoutCreate.appendChild(clone);
     }
@@ -86,12 +86,12 @@ export function checkoutShippingRender() {
     }
     checkoutInputs();
 
-    function checkoutSelect() {
-        let select = document.querySelector('select');
-        select.addEventListener('change', () => {
-            userData.countrySelected = select.selectedIndex;
-            localStorage.setItem('userData', JSON.stringify(userData));
-        });
-    }
-    checkoutSelect();
+    // function checkoutSelect() {
+    //     let select = document.querySelector('select');
+    //     select.addEventListener('change', () => {
+    //         userData.countrySelected = select.selectedIndex;
+    //         localStorage.setItem('userData', JSON.stringify(userData));
+    //     });
+    // }
+    // checkoutSelect();
 }

@@ -1,3 +1,5 @@
+import { makeRequest } from './request.js';
+
 export class Cart {
     constructor(productPrice) {
         this.productPrice = productPrice;
@@ -51,6 +53,34 @@ export function cartSum() {
 }
 
 export function cartRender() {
+    function cartPriceCheck() {
+        let getMethod = 'GET';
+        const urlAllProducts = 'http://127.0.0.1:5500/JS/projectOne/app/data/all-products.json';
+        makeRequest(urlAllProducts, getMethod)
+        .then(data => {
+            // console.log(data);
+            let localStorageItems = JSON.parse(localStorage.getItem('items'));
+            // console.log(localStorageItems);
+            localStorageItems.forEach(item => {
+                data.products.forEach(prod => {
+                    if (item.id == prod.id) {
+                        let itemPrice = item.price;
+                        let prodPrice = prod.price;
+                        if (itemPrice != prodPrice) {
+                            itemPrice = prodPrice;
+                            item.price = itemPrice;
+                            localStorage.setItem('items', JSON.stringify(localStorageItems));
+                        }
+                    }
+                });
+            });
+        })
+        .catch(function(error) {
+            console.log('Something went wrong', error);
+        });
+    }
+    cartPriceCheck();
+
     function cartPrep() {
         let fakeChild = document.children[0].children[1].children[0].children[1];
         let cartSectionCreate = document.createElement('section');
@@ -59,6 +89,8 @@ export function cartRender() {
         let clone = document.importNode(cartTemplate.content, true);
         document.body.children[0].replaceChild(cartSectionCreate, fakeChild);
         cartSectionCreate.appendChild(clone);
+
+        checkoutBtnStatus();
     }
     cartPrep();
 
@@ -92,6 +124,8 @@ export function cartRender() {
         }
 
         cartSubTotal();
+
+        checkoutBtnStatus();
     }
     cartDraw();
 
@@ -106,6 +140,8 @@ export function cartRender() {
         });
         subtotal.textContent = '$'.concat(subtotalRender);
         total.textContent = '$'.concat(+(shipping.textContent.split('$')[1]) + +(subtotal.textContent.split('$')[1]));
+
+        checkoutBtnStatus();
     }
 
     function cartActions() {
@@ -141,6 +177,8 @@ export function cartRender() {
                     localStorage.setItem('sum', sum);
                 }
                 });
+
+                checkoutBtnStatus();
         });
 
         quantityInput.forEach(inp => {
@@ -169,4 +207,16 @@ export function cartRender() {
         });
     }
     cartActions();
+
+    function checkoutBtnStatus() {
+        let subtotal = document.querySelector('.cart__subtotal');
+        let checkoutBtn = document.querySelector('.button-action__checkout');
+        if (subtotal.textContent.split('$')[1] == 0) {
+            checkoutBtn.classList.add('button-action_disabled');
+            checkoutBtn.setAttribute('disabled', 'disabled');
+        } else {
+            checkoutBtn.classList.remove('button-action_disabled');
+            checkoutBtn.removeAttribute('disabled');
+        }
+    }
 }
