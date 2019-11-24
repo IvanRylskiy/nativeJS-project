@@ -54,7 +54,7 @@
 .col-12 {
     width: 100%;
 }
-.payment-inf_label  {
+.checkout__payment-inf_label {
     font-size: 0.875rem;
     color: #000000;
     margin-bottom: 5px;
@@ -88,7 +88,7 @@ select::-ms-expand {
     font-size: 12px;
     float: right;
 }
-.block-buttons {
+.shipping__block-buttons {
     padding-top: 140px;
     padding-bottom: 30px;
     width: 100%;

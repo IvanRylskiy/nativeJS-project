@@ -111,11 +111,11 @@ svg:hover {
     position: absolute;
     content: "";
     width: 20px;
-    height: 18px;
+    height: 19px;
     border: 1px solid #c6c6c5;
     border-radius: 50%;
-    left: 0.3px;
-    top: 0.3px;
+    left: 0px;
+    top: 0px;
 }
 .input-radio:checked + .label-radio::before {
     border-color: #8bc34a;
@@ -130,6 +130,9 @@ svg:hover {
     border-radius: 50%;
     top: 4px;
     left: 4px;
+}
+.input-radio-top:checked + .label-radio::after {
+    height: 12px;
 }
 .main {
     width: 1440px;

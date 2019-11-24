@@ -1,0 +1,129 @@
+.checkout-payment {
+    margin-bottom: 80px;
+}
+.payment {
+    width: 972px;
+    height: 646px;
+    display: flex;
+    flex-direction: column;
+    border: 1px solid #c6c6c5;
+    border-radius: 3px;
+    margin: 0 auto;
+    margin-top: 15px;
+    position: relative;
+}
+.payment:before {
+    content: '';
+    top: -9px;
+    position: absolute;
+    transform: rotate(-45deg);
+    width: 16px;
+    height: 16px;
+    background-color: white;
+    border-right: 1px solid #c6c6c5;
+    border-top: 1px solid #c6c6c5;
+    left: 650px;
+}
+.wrap {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+}
+.payment__table table {
+    width: 520px;
+}
+.payment__info {
+    width: 340px;
+    margin-left: 40px;
+    margin-top: 45px;
+}
+.payment__line {
+    width: 1px;
+    background: #c8c8c8;
+    height: 445px;
+    margin-top: 45px;
+}
+.block-buttons {
+    margin-top: 78px;
+    display: flex;
+    justify-content: space-between;
+    margin-left: 30px;
+    margin-right: 30px;
+}
+.button-action__pay {
+    width: 340px;
+}
+.product__image_mini {
+    width: 65px;
+    height: 48px;
+}
+.block-for-image_mini {
+    width: 68px;
+    height: 50px;
+    border: 1px solid #c6c6c5;
+    border-radius: 3px;
+}
+.cart__td_mini {
+    padding: 10px 0;
+}
+.cart__td {
+    padding-right: 30px;
+}
+.product__details {
+    margin-left: 20px;
+}
+.product {
+    display: flex;
+    align-items: center;
+    justify-content: start;
+}
+.cart__td_end {
+    text-align: end;
+}
+.cart__td_center {
+    text-align: center;
+}
+.product__name {
+    display: block;
+    color: #1c1c1b;
+    font-size: 16px;
+}
+.product__name_mini {
+    font-size: 14px;
+    color: #878786;
+}
+.cart__table_mini {
+    margin-top: 15px;
+    margin-left: 30px;
+}
+.table__heading {
+    font-size: 0.875rem;
+    color: #8bc34a;
+    margin-left: 30px;
+    margin-top: 45px;
+}
+.cart__td-charge {
+    font-size: 0.875rem;
+    padding-right: 100px;
+    padding-top: 30px;
+}
+.cart__td-charge-money {
+    padding-top: 30px;
+}
+.payment-inf_label {
+    margin-top: 20px;
+    margin-bottom: 6px;
+    color: #1c1c1b;
+    display: block;
+}
+.wrapper-inf__inp_right {
+    margin-left: 5px;
+}
+.wrapper-inf__inp_mini {
+    display: inline-block;
+    width: calc(50% - 5px);
+    padding-bottom: 45px;
+}
+.button-action__pay {
+    margin-right: 10px;
+}

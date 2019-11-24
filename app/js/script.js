@@ -6,6 +6,8 @@ import { Cart } from './cart.js';
 import { cartRender } from './cart.js';
 import { cartSum } from './cart.js';
 import { checkoutShippingRender } from './checkout.js';
+import { checkoutPaymentRender } from './checkout.js';
+import { checkoutSuccessRender } from './checkout.js';
 
 window.onload = function() {
     if (location.hash == '') {
@@ -40,6 +42,12 @@ function drawPage() {
     }
     if (location.hash == '#checkout_shipping') {
         checkoutShippingRender();
+    }
+    if (location.hash == '#checkout_payment') {
+        checkoutPaymentRender();
+    }
+    if (location.hash == '#checkout_success') {
+        checkoutSuccessRender();
     }
 }
 

@@ -45,7 +45,7 @@ export function cartSum() {
             totalPrice.textContent = '$'.concat(sum);
             localStorage.setItem('sum', sum);
         }
-    } else if (localStorageItems != null) {
+    } else if (localStorageItems == null) {
         let totalPrice = document.querySelector('.total-price');
         totalPrice.textContent = '$'.concat(sum);
         localStorage.setItem('sum', sum);

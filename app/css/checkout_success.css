@@ -1,0 +1,21 @@
+.heading-success {
+    text-align: center;
+    /* margin-top: 154px; */
+    font-size: 3.125rem;
+    color: #8bc34a;
+}
+.p-success {
+    text-align: center;
+    margin-top: 10px;
+    font-size: 1.25rem;
+    margin-bottom: 90px;
+}
+.button__back-to-shopping {
+    margin: 0 auto;
+    display: block;
+    width: 220px;
+    text-transform: uppercase;
+}
+.checkout-success {
+    /* margin-bottom: 415px; */
+}

@@ -9,6 +9,8 @@
     <link rel="stylesheet" href="css/index.css">
     <link rel="stylesheet" href="css/cart.css">
     <link rel="stylesheet" href="css/checkout_shipping.css">
+    <link rel="stylesheet" href="css/checkout_payment.css">
+    <link rel="stylesheet" href="css/checkout_success.css">
     <link href="https://fonts.googleapis.com/css?family=Open+Sans&display=swap&subset=cyrillic" rel="stylesheet">
 </head>
 <body>
@@ -185,6 +187,120 @@
             </div>
         </footer>
 
+        <template id="checkout-success">
+            <section class="checkout-success">
+                <h2 class="heading-success">Congratulations</h2>
+                <p class="p-success">Order Placed Successfully!</p>
+                <button class="button button-action button__back-to-shopping">Back to Shopping</button>
+            </section>
+        </template>
+
+        <template id="checkout-payment-item">
+            <tr class="cart__tr cart__tr_mini">
+                <td width="53%" class="cart__td cart__td_mini">
+                    <article class="product">
+                        <div class="product__block-for-image block-for-image_mini">
+                            <img class="product__image product__image_mini payment__img" src="" alt="">
+                        </div>
+                        <div class="product__details">
+                            <span class="product__name product__name_mini payment__prod"></span>
+                        </div>
+                    </article>
+                </td>
+                <td class="cart__td cart__td_end">
+                    <input placeholder="1" class="input-text input-quan input-text_smaller payment__quan" type="text" disabled>
+                </td>
+                <td class="cart__td cart__td_end payment__sum"></td>
+            </tr>
+        </template>
+
+        <template id="checkout-payment">
+            <section class="location" style="padding-left: 80px;">
+                <span class="location-item location__item"><a href="#home" class="location-item__link">Home</a></span>
+                <svg class="location__icon">
+                    <use xlink:href="assets/img/icons.svg#arrow-right"></use>
+                </svg>
+                <span class="location-item location__item"><a href="#cart" class="location-item__link">Cart</a></span>
+                <svg class="location__icon">
+                    <use xlink:href="assets/img/icons.svg#arrow-right"></use>
+                </svg>
+                <span class="location-item location__item"><a href="#checkout_shipping" class="location-item__link">Checkout</a></span>
+            </section>
+            
+            <ul class="checkout-shipping__navigation">
+                <li class="checkout-shipping__navigation-item checkout-shipping__navigation-item_active">
+                    <a href="#checkout_shipping" class="checkout-shipping__navigation-link">Shipping Address</a>
+                </li>
+                <li class="checkout-shipping__navigation-item">
+                    <a class="checkout-shipping__navigation-link checkout-shipping__navigation-link-active">Payment</a>
+                </li>
+            </ul>
+
+            <section class="payment">
+                <div class="wrap">
+                    <div class="table payment__table">
+                        <h6 class="table__heading">Your Order</h6>
+                        <table class="cart__table cart__table_mini">
+                            <tfoot>
+                            <tr>
+                                <td class="cart__td cart__td_center cart__td-charge" colspan="2">Shipping Charge</td>
+                                <td class="cart__td cart__td_end cart__td-charge-money">$5</td>
+                            </tr>
+                            </tfoot>
+                            <tbody class="payment__tbody"></tbody>
+                        </table>
+                    </div>
+
+                    <div class="payment__line"></div>
+
+                    <div class="payment__info">
+                        <div class="wrapper-inf">
+                            <input type="radio" id="contactChoice1"
+                                   value="phone" class="input-radio input-radio-top" checked>
+                            <label class="label-radio" for="contactChoice1">Credit Card / Debit Card</label>
+                            <form>
+                                <div class="wrapper-inf__inp">
+                                    <label class="payment-inf_label" for="name">Name on Card</label>
+                                    <input class="input-text payment__inf_field" id="name" type="text"
+                                           placeholder="Daniel Hecker">
+                                </div>
+                                <div class="wrapper-inf__inp">
+                                    <label class="payment-inf_label" for="number">Card Number</label>
+                                    <input class="input-text payment__inf_field" id="number" type="text"
+                                           placeholder="4121 4411 1414 9754">
+                                </div>
+                                <div class="wrapper-inf__inp wrapper-inf__inp_mini">
+                                    <label class="payment-inf_label" for="date">Valid Trough</label>
+                                    <input class="input-text payment__inf_field" id="date" type="text"
+                                           placeholder="MM / DD">
+                                </div>
+                                <div class="wrapper-inf__inp wrapper-inf__inp_mini wrapper-inf__inp_right">
+                                    <label class="payment-inf_label" for="cvv">CVV</label>
+                                    <input class="input-text payment__inf_field" id="cvv" type="text"
+                                           placeholder="eg. 201">
+                                </div>
+                            </form>
+                            <input data-radio-payment type="radio" id="contactChoice2"
+                                   value="phone" class="input-radio">
+                            <label for="contactChoice2" class="label-radio">Paypal</label>
+                            <form>
+                                <div class="wrapper-inf__inp wrapper-inf__inp_padding-bottom">
+                                    <label class="payment-inf_label" for="email">Email Address</label>
+                                    <input class="input-text payment__inf_field" id="email" type="text"
+                                           placeholder="abc@xyz.com">
+                                </div>
+                            </form>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="block-buttons">
+                    <button class="button button-cancel button-to-shipping">Back</button>
+                    <button class="button button-action button-action__pay">Pay $5</button>
+                </div>
+            </section>
+        </template>
+
         <template id="checkout-shipping">
             <section class="location" style="padding-left: 80px;">
                 <span class="location-item location__item"><a href="#home" class="location-item__link">Home</a></span>
@@ -195,7 +311,7 @@
                 <svg class="location__icon">
                     <use xlink:href="assets/img/icons.svg#arrow-right"></use>
                 </svg>
-                <span class="location-item location__item"><a href="#checkout-shipping_shipping" class="location-item__link">Checkout</a></span>
+                <span class="location-item location__item"><a class="location-item__link">Checkout</a></span>
             </section>
 
             <ul class="checkout-shipping__navigation">
@@ -203,16 +319,17 @@
                     <a href="#checkout_shipping" class="checkout-shipping__navigation-link checkout-shipping__navigation-link-active">Shipping Address</a>
                 </li>
                 <li class="checkout-shipping__navigation-item">
-                    <a href="#checkout_payment" class="checkout-shipping__navigation-link">Payment</a>
+                    <a class="checkout-shipping__navigation-link checkout-payment-link">Payment</a>
                 </li>
             </ul>
             
             <form class="shipping">
                 <div class="col-3">
-                    <label class="payment-inf_label" for="first-name">First Name*</label>
+                    <label class="checkout__payment-inf_label" for="first-name">First Name*</label>
+                    <span class="error display_none">* Required</span>
                     <input class="input-text payment-inf_field" id="first-name" type="text" placeholder="Jhone">
                     <div class="wrapper-inf__inp">
-                        <label class="payment-inf_label" for="first-name">Country*</label>
+                        <label class="checkout__payment-inf_label" for="first-name">Country*</label>
                         <select name="country" size="1">
                             <option value="UK">UK</option>
                             <option value="US">US</option>
@@ -224,36 +341,42 @@
                 </div>
 
                 <div class="col-3">
-                    <label class="payment-inf_label" for="last-name">Last Name*</label>
+                    <label class="checkout__payment-inf_label" for="last-name">Last Name*</label>
+                    <span class="error display_none">* Required</span>
                     <input class="input-text payment-inf_field" id="last-name" type="text" placeholder="Smith">
                     <div class="wrapper-inf__inp">
-                        <label class="payment-inf_label" for="city">Town / City*</label>
+                        <label class="checkout__payment-inf_label" for="city">Town / City*</label>
+                        <span class="error display_none">* Required</span>
                         <input class="input-text payment-inf_field" id="city" type="text" placeholder="eg. New york">
                     </div>
                 </div>
 
                 <div class="col-3">
-                    <label class="payment-inf_label" for="company-name">Company Name</label>
+                    <label class="checkout__payment-inf_label" for="company-name">Company Name</label>
+                    <span class="error display_none">* Required</span>
                     <input class="input-text payment-inf_field" id="company-name" type="text" placeholder="Rosuson Industries">
                     <div class="wrapper-inf__inp">
-                        <label class="payment-inf_label" for="postcode">Postcode*</label>
+                        <label class="checkout__payment-inf_label" for="postcode">Postcode*</label>
+                        <span class="error display_none">* Required</span>
                         <input class="input-text payment-inf_field" id="postcode" type="text" placeholder="eg. 358745">
                     </div>
                 </div>
 
                 <div class="wrapper-inf__inp col-12">
-                    <label class="payment-inf_label" for="address">Address*</label>
-                    <span class="error">* Required</span>
+                    <label class="checkout__payment-inf_label" for="address">Address*</label>
+                    <span class="error display_none">* Required</span>
                     <input class="input-text payment-inf_field" id="address" type="text" placeholder="eg. 2nd steer, Costrica, Uk 354548">
                 </div>
                     
                 <div class="wrapper-inf__inp col-3">
-                    <label class="payment-inf_label" for="email-address">Email Address*</label>
+                    <label class="checkout__payment-inf_label" for="email-address">Email Address*</label>
+                    <span class="error display_none">* Required</span>
                     <input class="input-text payment-inf_field" id="email-address" type="text" placeholder="abc@xyz.com">
                 </div>
                     
                 <div class="wrapper-inf__inp col-3">
-                    <label class="payment-inf_label" for="phone">Phone</label>
+                    <label class="checkout__payment-inf_label" for="phone">Phone</label>
+                    <span class="error display_none">* Required</span>
                     <input class="input-text payment-inf_field" id="phone" type="text" placeholder="eg. 94 788 1221">
                 </div>
                 
@@ -279,7 +402,7 @@
                     </div> -->
                 </div>
             
-                <div class="block-buttons">
+                <div class="shipping__block-buttons">
                     <button class="button button-cancel button-to-cart">Back</button>
                     <button class="button button-action button-to-payment">Next</button>
                 </div>
@@ -319,6 +442,7 @@
                 </svg>
                 <span class="location-item location__item"><a href="#cart" class="location-item__link">Cart</a></span>
             </section>
+
             <section class="cart__cart">
                 <table data-main-block class="cart__table">
                     <thead class="cart__thead">
@@ -360,6 +484,7 @@
                     <tbody class="cart__tbody"></tbody>
                 </table>
             </section>
+
             <aside class="ad">
                 <img src="assets/img/cart/ad.jpg" alt="ad__image" class="ad__image">
             </aside>
