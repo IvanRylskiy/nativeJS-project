@@ -100,6 +100,7 @@ export function checkoutShippingRender() {
                     a = false;
                     break;
                 } else {
+                    error[i].classList.add('display_none');
                     a = true;
                 }
             }
