@@ -94,7 +94,7 @@ export function checkoutShippingRender() {
         let hash = '#checkout_payment';
 
         function checkInputs() {
-            for (let i = 0; i < inputsCheckoutForm.length; i++) {
+            for (let i = 0; i < inputsCheckoutForm.length - 1; i++) {
                 if (inputsCheckoutForm[i].value == "") {
                     error[i].classList.remove('display_none');
                     a = false;
