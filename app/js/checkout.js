@@ -93,7 +93,8 @@ export function checkoutShippingRender() {
         let a = false;
         let hash = '#checkout_payment';
 
-        function checkInputs() {
+        function checkInputs(e) {
+            e.preventDefault();
             for (let i = 0; i < inputsCheckoutForm.length - 1; i++) {
                 if (inputsCheckoutForm[i].value == "") {
                     error[i].classList.remove('display_none');
