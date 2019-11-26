@@ -2,7 +2,7 @@ import { addToCart } from './addToCart.js';
 
 export function categoryRender(data) {
     function categoryPrep() {
-        let fakeChild = document.children[0].children[1].children[0].children[1];
+        let fakeChild = document.body.querySelector('main').children[1];
         let categorySectionCreate = document.createElement('section');
         categorySectionCreate.className = 'category';
         categorySectionCreate.innerHTML =   `<section class="location">
@@ -15,7 +15,7 @@ export function categoryRender(data) {
                                             <h2 class="category__heading"></h2>
                                             <div class="cards category__cards"></div>`;
 
-        document.body.children[0].replaceChild(categorySectionCreate, fakeChild);
+        document.body.querySelector('main').replaceChild(categorySectionCreate, fakeChild);
     }
     categoryPrep();
 

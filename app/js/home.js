@@ -5,7 +5,7 @@
 import { addToCart } from './addToCart.js';
 
 export function homeRender(data) {
-    let fakeChild = document.children[0].children[1].children[0].children[1];
+    let fakeChild = document.body.querySelector('main').children[1];
     let renderData;
     renderData = data;
     let deletedData = [];
@@ -19,7 +19,7 @@ export function homeRender(data) {
                                             <div class="right home__right"></div>
                                         </div>`;
 
-        document.body.children[0].replaceChild(homeSectionCreate, fakeChild);
+        document.body.querySelector('main').replaceChild(homeSectionCreate, fakeChild);
 
         let renderDataLength = renderData.cards.length;
         console.log(renderDataLength, 'количество продуктов');

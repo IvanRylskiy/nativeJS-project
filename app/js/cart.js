@@ -55,7 +55,7 @@ export function cartSum() {
 export function cartRender() {
     function cartPriceCheck() {
         let getMethod = 'GET';
-        const urlAllProducts = 'http://127.0.0.1:5500/JS/projectOne/app/data/all-products.json';
+        const urlAllProducts = 'http://localhost:3000/data/all-products.json';
         makeRequest(urlAllProducts, getMethod)
         .then(data => {
             // console.log(data);
@@ -82,12 +82,12 @@ export function cartRender() {
     cartPriceCheck();
 
     function cartPrep() {
-        let fakeChild = document.children[0].children[1].children[0].children[1];
+        let fakeChild = document.body.querySelector('main').children[1];
         let cartSectionCreate = document.createElement('section');
         cartSectionCreate.className = 'cart';
         let cartTemplate = document.querySelector('#cart');
         let clone = document.importNode(cartTemplate.content, true);
-        document.body.children[0].replaceChild(cartSectionCreate, fakeChild);
+        document.body.querySelector('main').replaceChild(cartSectionCreate, fakeChild);
         cartSectionCreate.appendChild(clone);
 
         checkoutBtnStatus();

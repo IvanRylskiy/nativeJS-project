@@ -64,7 +64,7 @@ export function menuRender () {
             }
             
             let currentCategory = elements.dataset.category;
-            let currentCategoryUrl = `http://127.0.0.1:5500/JS/projectOne/app/data/${currentCategory}.json`;
+            let currentCategoryUrl = `http://localhost:3000/data/${currentCategory}.json`;
             let getMethod = 'GET';
             makeRequest(currentCategoryUrl, getMethod)
                 .then(drawMenu)

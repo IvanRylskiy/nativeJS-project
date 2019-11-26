@@ -21,7 +21,7 @@ window.onload = function() {
 function drawPage() {
     let getMethod = 'GET';
     if (location.hash == '#home') {
-        const urlHome = 'http://127.0.0.1:5500/JS/projectOne/app/data/home.json';
+        const urlHome = 'http://localhost:3000/data/home.json';
         makeRequest(urlHome, getMethod)
         .then(homeRender)
         .catch(function(error) {
@@ -30,7 +30,7 @@ function drawPage() {
     }
     if (location.hash.indexOf('category') != -1) {
         let categoryName = location.hash.split('_')[1];
-        let urlCategory = `http://127.0.0.1:5500/JS/projectOne/app/data/category_${categoryName}.json`;
+        let urlCategory = `http://localhost:3000/data/category_${categoryName}.json`;
         makeRequest(urlCategory, getMethod)
         .then(categoryRender)
         .catch(function(error) {

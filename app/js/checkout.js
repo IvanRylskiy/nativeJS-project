@@ -26,10 +26,10 @@ export function checkoutShippingRender() {
     }
 
     function checkoutShippingPrep() {
-        let fakeChild = document.children[0].children[1].children[0].children[1];
+        let fakeChild = document.body.querySelector('main').children[1];
         let categoryCheckoutCreate = document.createElement('section');
         categoryCheckoutCreate.className = 'checkout-shipping';
-        document.body.children[0].replaceChild(categoryCheckoutCreate, fakeChild);
+        document.body.querySelector('main').replaceChild(categoryCheckoutCreate, fakeChild);
         let categoryCheckoutTemplate = document.querySelector('#checkout-shipping'),
             firstNameTemplate = categoryCheckoutTemplate.content.querySelector('#first-name'),
             lastNameTemplate = categoryCheckoutTemplate.content.querySelector('#last-name'),
@@ -148,10 +148,10 @@ export function checkoutShippingRender() {
 
 export function checkoutPaymentRender() {
     function checkoutPaymentPrep() {
-        let fakeChild = document.children[0].children[1].children[0].children[1];
+        let fakeChild = document.body.querySelector('main').children[1];
         let categoryPaymentCreate = document.createElement('section');
         categoryPaymentCreate.className = 'checkout-shipping';
-        document.body.children[0].replaceChild(categoryPaymentCreate, fakeChild);
+        document.body.querySelector('main').replaceChild(categoryPaymentCreate, fakeChild);
         let categoryPaymentTemplate = document.querySelector('#checkout-payment');
         let clone = document.importNode(categoryPaymentTemplate.content, true);
         categoryPaymentCreate.appendChild(clone);
@@ -209,9 +209,9 @@ export function checkoutPaymentRender() {
 export function checkoutSuccessRender() {
     function checkoutSuccessDraw() {
         let checkoutSuccessTemplate = document.querySelector('#checkout-success');
-        let fakeChild = document.children[0].children[1].children[0].children[1];
+        let fakeChild = document.body.querySelector('main').children[1];
         let clone = document.importNode(checkoutSuccessTemplate.content, true);
-        document.body.children[0].replaceChild(clone, fakeChild);
+        document.body.querySelector('main').replaceChild(clone, fakeChild);
     }
     checkoutSuccessDraw();
 
